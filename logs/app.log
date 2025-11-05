@@ -1,0 +1,686 @@
+2025-09-22 13:25:12,270 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-22 13:25:56,710 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-22 13:25:56,726 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-22 13:29:12,889 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: division by zero
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\__init__.py", line 44, in test_division_error
+    result = 1 / 0
+             ~~^~~
+ZeroDivisionError: division by zero
+
+2025-09-22 13:29:12,925 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-22 13:29:57,584 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: division by zero
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\__init__.py", line 45, in test_division_error
+    result = 1 / 0
+             ~~^~~
+ZeroDivisionError: division by zero
+
+2025-09-22 13:29:57,599 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:36:57,846 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:36:58,056 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:37:04,538 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:37:06,517 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:39:31,590 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: non_existent_table
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\test.py", line 16, in test_db_error
+    db.session.execute(text("SELECT * FROM non_existent_table"))
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\scoping.py", line 779, in execute
+    return self._proxied.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-09-25 09:40:02,784 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:40:04,543 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: non_existent_table
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\test.py", line 16, in test_db_error
+    db.session.execute(text("SELECT * FROM non_existent_table"))
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\scoping.py", line 779, in execute
+    return self._proxied.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-09-25 09:40:04,558 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:41:18,047 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: non_existent_table
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\test.py", line 16, in test_db_error
+    db.session.execute(text("SELECT * FROM non_existent_table"))
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\scoping.py", line 779, in execute
+    return self._proxied.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-09-25 09:41:18,070 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:41:26,314 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: non_existent_table
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\test.py", line 16, in test_db_error
+    db.session.execute(text("SELECT * FROM non_existent_table"))
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\scoping.py", line 779, in execute
+    return self._proxied.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-09-25 09:41:26,330 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:41:28,177 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: non_existent_table
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\test.py", line 16, in test_db_error
+    db.session.execute(text("SELECT * FROM non_existent_table"))
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\scoping.py", line 779, in execute
+    return self._proxied.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: non_existent_table
+[SQL: SELECT * FROM non_existent_table]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-09-25 09:41:28,197 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:41:29,857 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: division by zero
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\test.py", line 24, in test_division_error
+    result = 1 / 0
+             ~~^~~
+ZeroDivisionError: division by zero
+
+2025-09-25 09:41:29,876 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:42:41,021 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - 请求的资源不存在
+2025-09-25 09:42:41,039 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:44:06,181 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-25 09:44:06,201 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-09-27 21:27:56,072 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-27 21:28:38,301 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名和密码不能为空
+2025-09-27 21:29:55,336 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-27 21:30:27,704 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-27 21:30:33,920 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-27 21:35:18,212 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名和密码不能为空
+2025-09-29 14:10:26,751 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-09-29 14:10:36,739 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-29 14:10:38,202 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-09-29 14:10:40,905 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-29 14:31:54,114 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 更新内容不能为空
+2025-09-29 14:32:31,195 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 留言不存在
+2025-09-29 14:36:53,256 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 留言不存在
+2025-09-30 10:27:30,649 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-09-30 10:27:38,691 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名和密码不能为空
+2025-09-30 10:27:45,863 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名和密码不能为空
+2025-09-30 10:28:03,594 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名已存在
+2025-09-30 10:28:23,765 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名和密码不能为空
+2025-09-30 10:34:47,029 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名和密码不能为空
+2025-09-30 10:34:57,248 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名已存在
+2025-10-09 10:21:08,689 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-09 10:21:40,765 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-09 10:26:22,686 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-10-09 10:26:32,246 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名或密码错误
+2025-10-13 14:29:41,826 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: division by zero
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\test.py", line 25, in hooks_demo
+    a=1/0
+      ~^~
+ZeroDivisionError: division by zero
+
+2025-10-13 14:49:20,430 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: test_a() missing 1 required positional argument: 'text'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: test_a() missing 1 required positional argument: 'text'
+
+2025-10-13 14:49:46,763 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: test_a() missing 1 required positional argument: 'text'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: test_a() missing 1 required positional argument: 'text'
+
+2025-10-13 15:13:21,089 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-13 15:14:17,815 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 权限不足，无法操作他人资源
+2025-10-13 15:14:28,343 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 权限不足，无法操作他人资源
+2025-10-13 16:09:21,315 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户不存在或已注销
+2025-10-13 16:09:25,883 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户不存在或已注销
+2025-10-13 16:09:35,689 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户不存在或已注销
+2025-10-13 16:10:00,328 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 400 Bad Request - Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2025-10-13 16:10:34,568 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 文章标题和内容均不能为空
+2025-10-13 16:10:56,653 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-13 16:15:29,543 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-13 16:15:46,660 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-13 16:16:00,494 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-13 16:16:06,522 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 文章标题和内容均不能为空
+2025-10-13 16:17:20,823 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-10-13 16:17:35,956 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 405 Method Not Allowed - The method is not allowed for the requested URL.
+2025-10-20 14:10:34,197 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 文章标题和内容均不能为空
+2025-10-20 14:31:57,788 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请求参数错误，缺少资源ID
+2025-10-20 14:59:22,393 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-10-20 14:59:32,776 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: 'Request' object has no attribute 'arges'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\article\routes.py", line 50, in list_all
+    page = request.arges.get('page')
+           ^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'arges'. Did you mean: 'args'?
+
+2025-10-20 15:09:40,619 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: '<' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\article\routes.py", line 59, in list_all
+    article_a = ArticleModel.query.order_by(ArticleModel.timestamp.desc()).paginate(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_sqlalchemy\query.py", line 98, in paginate
+    return QueryPagination(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
+    page, per_page = self._prepare_page_args(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_sqlalchemy\pagination.py", line 126, in _prepare_page_args
+    if page < 1:
+       ^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+2025-10-20 15:16:41,522 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: unhashable type: 'list'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\article\routes.py", line 78, in list_all
+    return SuccessResponse(data={
+                                ^
+TypeError: unhashable type: 'list'
+
+2025-10-21 10:23:49,607 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-10-21 10:23:54,452 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 用户名已存在
+2025-10-23 11:06:05,400 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: type object 'UserModel' has no attribute 'title'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\auth\routes.py", line 98, in list_users
+    UserModel.title.like(f'%{search_keyword}%')
+    ^^^^^^^^^^^^^^^
+AttributeError: type object 'UserModel' has no attribute 'title'
+
+2025-10-23 11:06:45,198 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: type object 'UserModel' has no attribute 'timestamp'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\auth\routes.py", line 102, in list_users
+    pagination = base_query.order_by(UserModel.timestamp.desc()).paginate(
+                                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'UserModel' has no attribute 'timestamp'
+
+2025-10-30 20:13:25,759 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 400 Bad Request - The browser (or proxy) sent a request that this server could not understand.
+KeyError: 'file'
+2025-10-30 20:35:04,665 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 不支持的文件格式，仅支持 jpg, jpeg, png, gif 格式
+2025-10-30 20:35:30,934 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 400 Bad Request - The browser (or proxy) sent a request that this server could not understand.
+KeyError: 'file'
+2025-10-30 20:35:39,440 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 不支持的文件格式，仅支持 jpg, jpeg, png, gif 格式
+2025-10-30 20:42:17,006 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 400 Bad Request - The browser (or proxy) sent a request that this server could not understand.
+KeyError: 'file'
+2025-11-03 23:10:08,832 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 请先登录
+2025-11-03 23:10:15,827 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\auth\routes.py", line 25, in register
+    if UserModel.query.filter_by(username=username).first():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4218, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4259, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\interfaces.py", line 595, in init
+    self.do_init()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1660, in do_init
+    self._generate_backref()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\relationships.py", line 2086, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+
+2025-11-03 23:10:17,674 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\auth\routes.py", line 48, in login
+    user = UserModel.query.filter_by(username=username).first()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4218, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4259, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\interfaces.py", line 595, in init
+    self.do_init()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1660, in do_init
+    self._generate_backref()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\relationships.py", line 2086, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+
+2025-11-03 23:10:20,285 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[ExampleCategory(example_category)]'. Original exception was: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\auth\routes.py", line 25, in register
+    if UserModel.query.filter_by(username=username).first():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4218, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4255, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[ExampleCategory(example_category)]'. Original exception was: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+
+2025-11-03 23:10:41,130 - ERROR - exception_handler.py - handle_database_error - 52 - 数据库错误: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[ExampleCategory(example_category)]'. Original exception was: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\auth\routes.py", line 25, in register
+    if UserModel.query.filter_by(username=username).first():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_sqlalchemy\model.py", line 22, in __get__
+    return cls.query_class(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\query.py", line 289, in _set_entities
+    coercions.expect(
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\coercions.py", line 388, in expect
+    insp._post_inspect
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4218, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4255, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[ExampleCategory(example_category)]'. Original exception was: Error creating backref 'category' on relationship 'ExampleCategory.items': property of that name exists on mapper 'Mapper[ExampleItem(example_item)]'
+
+2025-11-03 23:17:33,457 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 415 Unsupported Media Type - Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-11-03 23:20:44,821 - ERROR - exception_handler.py - handle_unexpected_error - 68 - 未捕获的异常: Object of type AppenderQuery is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\modules\example\routes.py", line 59, in list_categories
+    return SuccessResponse(data=category_list, message="分类列表获取成功")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\Desktop\dbapp\app\utils\response_handler.py", line 14, in SuccessResponse
+    return jsonify(response_body), 200
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\k\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type AppenderQuery is not JSON serializable
+
+2025-11-03 23:22:58,375 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 项目名称和分类ID均不能为空
+2025-11-03 23:30:02,019 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 405 Method Not Allowed - The method is not allowed for the requested URL.
+2025-11-03 23:31:20,775 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 405 Method Not Allowed - The method is not allowed for the requested URL.
+2025-11-03 23:34:37,989 - INFO - exception_handler.py - handle_api_exception - 40 - 业务异常: 项目不存在
+2025-11-03 23:47:50,615 - WARNING - exception_handler.py - handle_http_exception - 60 - HTTP 异常: 404 Not Found - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
